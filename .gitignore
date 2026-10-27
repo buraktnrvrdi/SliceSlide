@@ -1,0 +1,11 @@
+# Xcode derleme çıktıları
+build/
+build-device/
+DerivedData/
+
+# Kullanıcıya özel Xcode ayarları
+xcuserdata/
+*.xcuserstate
+
+# macOS
+.DS_Store
