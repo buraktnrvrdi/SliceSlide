@@ -42,9 +42,9 @@ enum Reminders {
                let at = cal.date(bySettingHour: 19, minute: 0, second: 0, of: day), at > now {
                 let body: String
                 if streak > 0 && offset <= 1 {
-                    body = "🔥 \(streak) günlük serin bozulmasın! Bugünün meydan okuması seni bekliyor."
+                    body = L("🔥 %lld günlük serin bozulmasın! Bugünün meydan okuması seni bekliyor.", streak)
                 } else {
-                    body = "Günlük meydan okuma hazır. 60 saniyelik Akış modunda rekorunu da kırabilirsin."
+                    body = L("Günlük meydan okuma hazır. 60 saniyelik Akış modunda rekorunu da kırabilirsin.")
                 }
                 add(id: "daily.\(offset)", title: "Slice & Slide", body: body, at: at)
             }
@@ -52,7 +52,7 @@ enum Reminders {
             // Öğlen 12:30: günlük sandık
             if !(offset == 0 && !progress.chestReady),
                let at = cal.date(bySettingHour: 12, minute: 30, second: 0, of: day), at > now {
-                add(id: "chest.\(offset)", title: "Günlük Sandık 🎁", body: "Bugünün sürpriz ödülü seni bekliyor. Aç ve ipucu ya da Seri Kalkanı kazan!", at: at)
+                add(id: "chest.\(offset)", title: L("Günlük Sandık 🎁"), body: L("Bugünün sürpriz ödülü seni bekliyor. Aç ve ipucu ya da Seri Kalkanı kazan!"), at: at)
             }
         }
     }

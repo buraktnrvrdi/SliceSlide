@@ -54,7 +54,7 @@ final class GameCenter: NSObject, ObservableObject, GKGameCenterControllerDelega
 
     func showDashboard() {
         guard isAuthenticated, let root = Self.topController() else {
-            message = "Game Center'a giriş yapılmamış. Cihazın Ayarlar > Game Center bölümünden giriş yapıp tekrar dene."
+            message = L("Game Center'a giriş yapılmamış. Cihazın Ayarlar > Game Center bölümünden giriş yapıp tekrar dene.")
             return
         }
         let vc = GKGameCenterViewController(state: .dashboard)

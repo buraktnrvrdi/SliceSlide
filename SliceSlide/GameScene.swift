@@ -44,7 +44,7 @@ final class TargetSlot {
         inner.lineWidth = 2
         inner.fillColor = UIColor(white: 1, alpha: 0.10)
 
-        label.text = "%\(Int((fraction * 100).rounded()))"
+        label.text = pctText(Int((fraction * 100).rounded()))
         label.fontSize = 24
         label.fontColor = .white
         label.verticalAlignmentMode = .center
@@ -465,7 +465,7 @@ final class GameScene: SKScene {
         node.position = CGPoint(x: final.x - offset.dx, y: final.y - offset.dy)
         node.run(Self.ease(.move(to: final, duration: 0.3), .easeOut))
         let pct = SKLabelNode(fontNamed: "AvenirNext-Medium")
-        pct.text = "%\(Int((Geo.area(poly) / totalArea * 100).rounded()))"
+        pct.text = pctText(Int((Geo.area(poly) / totalArea * 100).rounded()))
         pct.fontSize = 22
         pct.fontColor = .white
         pct.verticalAlignmentMode = .center
@@ -557,7 +557,7 @@ final class GameScene: SKScene {
             guard idx < labelPool.count else { return }
             let l = labelPool[idx]
             idx += 1
-            l.text = "%\(Int((Geo.area(poly) / totalArea * 100).rounded()))"
+            l.text = pctText(Int((Geo.area(poly) / totalArea * 100).rounded()))
             l.position = Geo.centroid(poly)
             l.isHidden = false
         }
@@ -800,7 +800,7 @@ final class GameScene: SKScene {
                                       .group([Self.ease(.moveBy(x: 0, y: -size.height * 0.5, duration: 0.6), .easeIn),
                                               .fadeOut(withDuration: 0.6)])]))
             }
-            let msg = "\(sorted.count) parça çıktı, \(slots.count) hedef var"
+            let msg = L("%lld parça çıktı, %lld hedef var", sorted.count, slots.count)
             run(.sequence([.wait(forDuration: 0.8), .run { [weak self] in self?.fail(message: msg, near: false) }]))
             return
         }
@@ -818,7 +818,7 @@ final class GameScene: SKScene {
             maxErr = max(maxErr, err)
             let good = err <= def.tolerance
             let a = Int((actual * 100).rounded()), t = Int((slot.fraction * 100).rounded())
-            results.append((good, good ? "%\(a)" : "%\(a) → %\(t)"))
+            results.append((good, good ? pctText(a) : "\(pctText(a)) → \(pctText(t))"))
 
             let node = piece.node
             let xs = piece.poly.map { $0.x }, ys = piece.poly.map { $0.y }
@@ -852,7 +852,7 @@ final class GameScene: SKScene {
             } else {
                 let pct = Int((maxErr * 100).rounded())
                 let near = maxErr <= tol * 2.2
-                self.fail(message: near ? "Çok yakın! En büyük sapma %\(pct)" : "Olmadı. En büyük sapma %\(pct)", near: near)
+                self.fail(message: near ? L("Çok yakın! En büyük sapma %%%lld", pct) : L("Olmadı. En büyük sapma %%%lld", pct), near: near)
             }
         }]), withKey: "resolve")
     }
@@ -989,7 +989,7 @@ final class GameScene: SKScene {
             sparkle(at: slot.node.position, color: UIColor(255, 226, 130), count: 16, spread: slot.radius * 1.9)
         }
         let label = SKLabelNode(fontNamed: "AvenirNext-Medium")
-        label.text = "KUSURSUZ"
+        label.text = L("KUSURSUZ")
         label.fontSize = 40
         label.fontColor = UIColor(255, 232, 150)
         label.verticalAlignmentMode = .center
@@ -1082,7 +1082,7 @@ final class GameScene: SKScene {
         timerBar?.color = f < 0.25 ? TargetSlot.coral : .white
         if timeLeft <= 0 {
             for p in pieces { p.node.run(.fadeAlpha(to: 0.4, duration: 0.3)) }
-            fail(message: "Süre doldu", near: false)
+            fail(message: L("Süre doldu"), near: false)
         }
     }
 }

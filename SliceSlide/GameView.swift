@@ -23,7 +23,7 @@ struct GameView: View {
             hud
 
             if session.level <= 5, session.mode == .level, session.phase == .playing, session.cutsLeft == session.totalCuts {
-                Text("Parmağını sürükleyerek kes")
+                Text(L("Parmağını sürükleyerek kes"))
                     .font(.custom("AvenirNext-Regular", size: 17))
                     .kerning(1)
                     .foregroundStyle(.white.opacity(0.9))
@@ -77,7 +77,7 @@ struct GameView: View {
     private var hud: some View {
         VStack(spacing: 12) {
             ZStack {
-                Text(session.mode == .flow ? "Akış" : (session.daily ? "Günlük" : "Level \(session.level)"))
+                Text(session.mode == .flow ? L("Akış") : (session.daily ? L("Günlük") : "Level \(session.level)"))
                     .font(.custom("AvenirNext-Regular", size: 40))
                     .kerning(3)
                     .foregroundStyle(.white)
@@ -148,7 +148,7 @@ struct GameView: View {
                 Text("\(session.score)")
                     .font(.custom("AvenirNext-Medium", size: 34))
                     .monospacedDigit()
-                Text("puan").font(.custom("AvenirNext-Regular", size: 14)).opacity(0.85)
+                Text(L("puan")).font(.custom("AvenirNext-Regular", size: 14)).opacity(0.85)
             }
             .foregroundStyle(.white)
             .shadow(color: .black.opacity(0.15), radius: 3, y: 1)
@@ -158,7 +158,7 @@ struct GameView: View {
                     .fill(session.timeLeft < 10 ? Color(red: 1, green: 0.5, blue: 0.55) : .white)
                     .frame(width: 220 * CGFloat(max(0, min(1, session.timeLeft / 60))), height: 7)
             }
-            Text("\(Int(ceil(max(0, session.timeLeft)))) sn")
+            Text(L("%lld sn", Int(ceil(max(0, session.timeLeft)))))
                 .font(.custom("AvenirNext-Medium", size: 14))
                 .foregroundStyle(.white.opacity(0.9))
         }
@@ -167,7 +167,7 @@ struct GameView: View {
     private var dailyBadge: some View {
         HStack(spacing: 8) {
             Image(systemName: "flame.fill")
-            Text("Günlük meydan okuma · Seri \(progress.currentStreak)")
+            Text(L("Günlük meydan okuma · Seri %lld", progress.currentStreak))
         }
         .font(.custom("AvenirNext-Medium", size: 15))
         .foregroundStyle(.white)
@@ -225,15 +225,15 @@ struct GameView: View {
                 Color.black.opacity(0.28).ignoresSafeArea()
                     .contentShape(Rectangle())
                 VStack(spacing: 18) {
-                    Text("Durduruldu")
+                    Text(L("Durduruldu"))
                         .font(.custom("AvenirNext-UltraLight", size: 34))
                         .kerning(3)
                         .foregroundStyle(.white)
                         .padding(.bottom, 10)
                     AudioToggles().padding(.bottom, 6)
-                    PillButton(title: "Devam Et", tint: session.palette.shapeBottomColor) { session.resume() }
-                    PillButton(title: "Tekrar", tint: session.palette.shapeBottomColor) { if session.mode == .flow { session.restartFlow() } else { session.restart() } }
-                    PillButton(title: session.mode == .level ? "Bölümler" : "Ana Menü", tint: session.palette.shapeBottomColor) { model.go(session.mode == .level ? .map : .home) }
+                    PillButton(title: L("Devam Et"), tint: session.palette.shapeBottomColor) { session.resume() }
+                    PillButton(title: L("Tekrar"), tint: session.palette.shapeBottomColor) { if session.mode == .flow { session.restartFlow() } else { session.restart() } }
+                    PillButton(title: session.mode == .level ? L("Bölümler") : L("Ana Menü"), tint: session.palette.shapeBottomColor) { model.go(session.mode == .level ? .map : .home) }
                 }
             }
             .transition(.opacity)
@@ -253,7 +253,7 @@ struct GameView: View {
         case .won(let stars):
             VStack(spacing: 26) {
                 StarsRow(count: stars)
-                Text("Harika!")
+                Text(L("Harika!"))
                     .font(.custom("AvenirNext-UltraLight", size: 38))
                     .kerning(3)
                     .foregroundStyle(.white)
@@ -278,7 +278,7 @@ struct GameView: View {
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white)
                     .shadow(color: .black.opacity(0.12), radius: 6)
-                PillButton(title: "Tekrar Dene", tint: session.palette.shapeBottomColor) { session.restart() }
+                PillButton(title: L("Tekrar Dene"), tint: session.palette.shapeBottomColor) { session.restart() }
             }
             .padding(.horizontal, 30)
             .frame(maxHeight: .infinity)
@@ -297,7 +297,7 @@ struct GameView: View {
                     .font(.system(size: 34))
                     .foregroundStyle(.white)
                     .shadow(color: .white.opacity(0.8), radius: 10)
-                Text(session.newBest ? "Yeni Rekor!" : "Süre Doldu")
+                Text(session.newBest ? L("Yeni Rekor!") : L("Süre Doldu"))
                     .font(.custom("AvenirNext-UltraLight", size: 38))
                     .foregroundStyle(.white)
                 Text("\(session.score)")
@@ -305,7 +305,7 @@ struct GameView: View {
                     .monospacedDigit()
                     .foregroundStyle(.white)
                     .shadow(color: .white.opacity(0.6), radius: 14)
-                Text("En iyi: \(progress.bestFlow)")
+                Text(L("En iyi: %lld", progress.bestFlow))
                     .font(.custom("AvenirNext-Regular", size: 17))
                     .foregroundStyle(.white.opacity(0.9))
                 HStack(spacing: 18) {
@@ -328,7 +328,7 @@ struct GameView: View {
     private func dailyWin(stars: Int) -> some View {
         VStack(spacing: 20) {
             StarsRow(count: stars)
-            Text("Günlük tamamlandı!")
+            Text(L("Günlük tamamlandı!"))
                 .font(.custom("AvenirNext-UltraLight", size: 34))
                 .foregroundStyle(.white)
                 .shadow(color: .white.opacity(0.6), radius: 10)
@@ -336,22 +336,22 @@ struct GameView: View {
                 VStack(spacing: 8) {
                     HStack(spacing: 8) {
                         Image(systemName: "flame.fill")
-                        Text("\(r.streak). gün seri")
+                        Text(L("%lld. gün seri", r.streak))
                     }
                     .font(.custom("AvenirNext-Medium", size: 20))
                     HStack(spacing: 8) {
                         Image(systemName: "lightbulb.fill")
-                        Text("+\(r.reward) ipucu hakkı")
+                        Text(L("+%lld ipucu hakkı", r.reward))
                     }
                     .font(.custom("AvenirNext-Regular", size: 17))
-                    if r.shield { Label("Seri Kalkanı seni kurtardı", systemImage: "shield.fill").font(.custom("AvenirNext-Regular", size: 14)) }
-                    if r.streak % 7 == 0 { Text("Haftalık seri bonusu!").font(.custom("AvenirNext-Regular", size: 14)) }
+                    if r.shield { Label(L("Seri Kalkanı seni kurtardı"), systemImage: "shield.fill").font(.custom("AvenirNext-Regular", size: 14)) }
+                    if r.streak % 7 == 0 { Text(L("Haftalık seri bonusu!")).font(.custom("AvenirNext-Regular", size: 14)) }
                 }
                 .foregroundStyle(.white)
                 .padding(.horizontal, 22).padding(.vertical, 14)
                 .background(RoundedRectangle(cornerRadius: 22).fill(.white.opacity(0.2)))
             } else {
-                Text("Bugünün ödülünü zaten aldın. Yarın yeni bir bölüm seni bekliyor.")
+                Text(L("Bugünün ödülünü zaten aldın. Yarın yeni bir bölüm seni bekliyor."))
                     .font(.custom("AvenirNext-Regular", size: 16))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white.opacity(0.92))
@@ -386,7 +386,7 @@ struct GameView: View {
                     .font(.system(size: 38))
                     .foregroundStyle(.white)
                     .shadow(color: .white.opacity(0.7), radius: 10)
-                Text("SEZON \(season.number)")
+                Text(L("SEZON %lld", season.number))
                     .font(.custom("AvenirNext-Medium", size: 14)).kerning(4)
                     .foregroundStyle(.white.opacity(0.9))
                 Text(season.name)
@@ -401,11 +401,11 @@ struct GameView: View {
                     .padding(.horizontal, 6)
                 HStack(spacing: 8) {
                     GemView(top: season.gemTopColor, bottom: season.gemBottomColor, size: 30)
-                    Text("Sezon sonu ödülü: \(season.rewardName)")
+                    Text(L("Sezon sonu ödülü: %@", season.rewardName))
                         .font(.custom("AvenirNext-Regular", size: 14))
                         .foregroundStyle(.white.opacity(0.95))
                 }
-                PillButton(title: "Başla", width: 200, tint: season.gemBottomColor) {
+                PillButton(title: L("Başla"), width: 200, tint: season.gemBottomColor) {
                     UserDefaults.standard.set(true, forKey: "seasonIntro_\(season.index)")
                     withAnimation(.easeInOut(duration: 0.3)) { introSeason = nil }
                 }
@@ -430,22 +430,22 @@ struct GameView: View {
                     .font(.system(size: 34))
                     .foregroundStyle(.white)
                     .shadow(color: .white.opacity(0.8), radius: 10)
-                Text(isLast ? "Oyunu Tamamladın!" : "Sezon \(season.number) Tamamlandı!")
+                Text(isLast ? L("Oyunu Tamamladın!") : L("Sezon %lld Tamamlandı!", season.number))
                     .font(.custom("AvenirNext-UltraLight", size: 34))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white)
                 GemView(top: season.gemTopColor, bottom: season.gemBottomColor, size: 130)
                     .padding(.vertical, 6)
-                Text("Ödül: \(season.rewardName)")
+                Text(L("Ödül: %@", season.rewardName))
                     .font(.custom("AvenirNext-Medium", size: 20))
                     .foregroundStyle(.white)
-                Text(isLast ? "Beş sezonu da bitirdin. Tüm kristaller koleksiyonunda; istediğini seçip bölümleri yeniden oynayabilirsin."
-                            : "Kristal koleksiyonuna eklendi. Koleksiyondan seçip oyunda kullanabilirsin.")
+                Text(isLast ? L("Beş sezonu da bitirdin. Tüm kristaller koleksiyonunda; istediğini seçip bölümleri yeniden oynayabilirsin.")
+                            : L("Kristal koleksiyonuna eklendi. Koleksiyondan seçip oyunda kullanabilirsin."))
                     .font(.custom("AvenirNext-Regular", size: 15))
                     .multilineTextAlignment(.center)
                     .lineSpacing(3)
                     .foregroundStyle(.white.opacity(0.92))
-                Text("Sezon yıldızı: \(stars) / \(Season.levelsPer * 3)")
+                Text(L("Sezon yıldızı: %lld / %lld", stars, Season.levelsPer * 3))
                     .font(.custom("AvenirNext-Regular", size: 14))
                     .foregroundStyle(.white.opacity(0.85))
                 HStack(spacing: 18) {

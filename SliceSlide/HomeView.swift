@@ -27,7 +27,7 @@ struct HomeView: View {
 
                 seasonCard
 
-                PillButton(title: "Oyna", width: 280, tint: palette.shapeBottomColor) { model.go(.map) }
+                PillButton(title: L("Oyna"), width: 280, tint: palette.shapeBottomColor) { model.go(.map) }
 
                 HStack(spacing: 10) {
                     dailyCard
@@ -41,11 +41,11 @@ struct HomeView: View {
             .opacity(appeared ? 1 : 0)
             .offset(y: appeared ? 0 : 16)
         }
-        .alert("Günlük Sandık", isPresented: Binding(get: { info != nil }, set: { if !$0 { info = nil } })) {
-            Button("Tamam", role: .cancel) {}
+        .alert(L("Günlük Sandık"), isPresented: Binding(get: { info != nil }, set: { if !$0 { info = nil } })) {
+            Button(L("Tamam"), role: .cancel) {}
         } message: { Text(info ?? "") }
         .alert("Game Center", isPresented: Binding(get: { gc.message != nil }, set: { if !$0 { gc.message = nil } })) {
-            Button("Tamam", role: .cancel) {}
+            Button(L("Tamam"), role: .cancel) {}
         } message: { Text(gc.message ?? "") }
         .onAppear {
             Music.shared.play(season: season.index)
@@ -102,7 +102,7 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 1) {
-                        Text("SEZON \(season.number)")
+                        Text(L("SEZON %lld", season.number))
                             .font(.custom("AvenirNext-Medium", size: 10)).kerning(2.5).opacity(0.85)
                         Text(season.name).font(.custom("AvenirNext-Medium", size: 16))
                     }
@@ -135,15 +135,15 @@ struct HomeView: View {
 
     private var dailyCard: some View {
         modeCard(icon: progress.dailyDone ? "checkmark.seal.fill" : "calendar",
-                 title: "Günlük",
-                 sub: "🔥 \(progress.currentStreak) · \(progress.dailyDone ? "Tamam" : "Hazır")") {
+                 title: L("Günlük"),
+                 sub: "🔥 \(progress.currentStreak) · \(progress.dailyDone ? L("Tamam (durum)") : L("Hazır"))") {
             model.go(.daily)
         }
     }
 
     private var flowCard: some View {
-        modeCard(icon: "bolt.horizontal.fill", title: "Akış",
-                 sub: progress.bestFlow > 0 ? "En iyi \(progress.bestFlow)" : "60 sn · Skor") {
+        modeCard(icon: "bolt.horizontal.fill", title: L("Akış"),
+                 sub: progress.bestFlow > 0 ? L("En iyi %lld", progress.bestFlow) : L("60 sn · Skor")) {
             model.go(.flow)
         }
     }
@@ -178,10 +178,10 @@ struct HomeView: View {
 
     private var dock: some View {
         HStack(spacing: 0) {
-            dockItem("trophy.fill", "Başarım") { model.go(.achievements) }
-            dockItem("sparkles", "Kişisel") { model.go(.collection) }
+            dockItem("trophy.fill", L("Başarım")) { model.go(.achievements) }
+            dockItem("sparkles", L("Kişisel")) { model.go(.collection) }
             chestItem
-            dockItem("chart.bar.fill", "Sıralama") { gc.showDashboard() }
+            dockItem("chart.bar.fill", L("Sıralama")) { gc.showDashboard() }
         }
         .padding(.vertical, 8)
         .background(Capsule().fill(.ultraThinMaterial))
@@ -214,7 +214,7 @@ struct HomeView: View {
             SFX.shared.play(.tap)
             Haptics.tap()
             if ready { withAnimation(.easeInOut(duration: 0.3)) { model.showChest = true } }
-            else { info = "Günlük sandığı bugün açtın. Yarın yenisi seni bekliyor!" }
+            else { info = L("Günlük sandığı bugün açtın. Yarın yenisi seni bekliyor!") }
         } label: {
             VStack(spacing: 3) {
                 Image(systemName: ready ? "gift.fill" : "gift").font(.system(size: 20))
@@ -227,7 +227,7 @@ struct HomeView: View {
                                 .overlay(Circle().stroke(.white, lineWidth: 1.2)).offset(x: 6, y: -4)
                         }
                     }
-                Text("Sandık").font(.custom("AvenirNext-Medium", size: 10))
+                Text(L("Sandık")).font(.custom("AvenirNext-Medium", size: 10))
                     .foregroundStyle(.white.opacity(ready ? 1 : 0.8))
             }
             .frame(maxWidth: .infinity)

@@ -132,13 +132,13 @@ struct AudioToggles: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            labeled("Müzik") {
+            labeled(L("Müzik")) {
                 CircleIconButton(systemName: musicOn ? "music.note" : "music.note.slash", size: compact ? 44 : 54) {
                     musicOn.toggle()
                     Music.shared.refresh()
                 }
             }
-            labeled("Efekt") {
+            labeled(L("Efekt")) {
                 CircleIconButton(systemName: sfxOn ? "speaker.wave.2.fill" : "speaker.slash.fill", size: compact ? 44 : 54) {
                     sfxOn.toggle()
                 }

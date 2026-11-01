@@ -21,7 +21,7 @@ struct ThemeSet: Identifiable {
     var swiftShapeColors: [Color] { shapeColors.map { Color($0) } }
 
     static let all: [ThemeSet] = [
-        ThemeSet(id: 0, name: "Pamuk Şeker", tagline: "Tatlı, yumuşak, pespembe",
+        ThemeSet(id: 0, name: L("Pamuk Şeker"), tagline: L("Tatlı, yumuşak, pespembe"),
                  paletteIDs: [18, 19, 20],
                  shapeColors: [UIColor(255, 240, 248), UIColor(255, 176, 216), UIColor(238, 118, 186)],
                  fx: CutFX(colors: [UIColor(255, 120, 184), UIColor(255, 196, 228), UIColor(255, 255, 255), UIColor(206, 176, 255), UIColor(170, 236, 220)],

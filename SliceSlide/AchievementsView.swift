@@ -21,7 +21,7 @@ struct AchievementsView: View {
             HStack {
                 CircleIconButton(systemName: "chevron.left", size: 46) { model.go(.home) }
                 Spacer()
-                Text("Başarımlar")
+                Text(L("Başarımlar"))
                     .font(.custom("AvenirNext-Medium", size: 28))
                     .kerning(2)
                     .foregroundStyle(.white)
@@ -36,10 +36,10 @@ struct AchievementsView: View {
 
     private var summary: some View {
         HStack(spacing: 18) {
-            stat("trophy.fill", "\(progress.achieved.count)/\(Achievement.all.count)", "başarım")
-            stat("star.fill", "\(progress.totalStars)", "yıldız")
-            stat("flame.fill", "\(progress.bestStreak)", "en iyi seri")
-            stat("lightbulb.fill", "\(progress.hints)", "ipucu")
+            stat("trophy.fill", "\(progress.achieved.count)/\(Achievement.all.count)", L("başarım"))
+            stat("star.fill", "\(progress.totalStars)", L("yıldız"))
+            stat("flame.fill", "\(progress.bestStreak)", L("en iyi seri"))
+            stat("lightbulb.fill", "\(progress.hints)", L("ipucu"))
         }
         .padding(16)
         .frame(maxWidth: .infinity)
@@ -102,7 +102,7 @@ struct AchievementToast: View {
                 HStack(spacing: 12) {
                     Image(systemName: a.icon).font(.system(size: 20))
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Başarım kazanıldı").font(.custom("AvenirNext-Regular", size: 11)).opacity(0.85)
+                        Text(L("Başarım kazanıldı")).font(.custom("AvenirNext-Regular", size: 11)).opacity(0.85)
                         Text(a.title).font(.custom("AvenirNext-Medium", size: 16))
                     }
                     Spacer(minLength: 6)

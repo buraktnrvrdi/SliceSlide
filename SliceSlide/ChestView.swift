@@ -83,11 +83,11 @@ struct ChestView: View {
 
     private var header: some View {
         VStack(spacing: 8) {
-            Text(result?.jackpot == true ? "ÇİFTE SANDIK!" : "GÜNLÜK ÖDÜL")
+            Text(L(result?.jackpot == true ? "ÇİFTE SANDIK!" : "GÜNLÜK ÖDÜL"))
                 .font(.custom("AvenirNext-Medium", size: 14)).kerning(4)
                 .foregroundStyle(result?.jackpot == true ? Color(red: 1, green: 0.9, blue: 0.5) : .white.opacity(0.92))
                 .shadow(color: .black.opacity(0.12), radius: 3, y: 1)
-            Text("\(ChestTier.names[tier]) Sandık")
+            Text(L("%@ Sandık", ChestTier.names[tier]))
                 .font(.custom("AvenirNext-UltraLight", size: 42))
                 .foregroundStyle(.white)
                 .shadow(color: .black.opacity(0.14), radius: 4, y: 1)
@@ -248,7 +248,7 @@ struct ChestView: View {
         VStack(spacing: 12) {
             switch stage {
             case .closed:
-                Text(note ?? "Kristali kesmek için dokun")
+                Text(note ?? L("Kristali kesmek için dokun"))
                     .font(.custom("AvenirNext-Regular", size: 16))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.white.opacity(0.95))
@@ -258,7 +258,7 @@ struct ChestView: View {
                 if AdService.shared.isAvailable && progress.chestBoostAvailable {
                     boostButton
                 }
-                PillButton(title: "Aç", width: 200, tint: season.gemBottomColor) { if !adBusy { open() } }
+                PillButton(title: L("Aç"), width: 200, tint: season.gemBottomColor) { if !adBusy { open() } }
             case .shaking, .cutting:
                 Text("…")
                     .font(.custom("AvenirNext-UltraLight", size: 40))
@@ -276,7 +276,7 @@ struct ChestView: View {
                     }
                     .padding(.horizontal, 24)
                     .animation(.spring(response: 0.5, dampingFraction: 0.75), value: shown)
-                    PillButton(title: "Harika", width: 200, tint: season.gemBottomColor) {
+                    PillButton(title: L("Harika"), width: 200, tint: season.gemBottomColor) {
                         withAnimation(.easeInOut(duration: 0.3)) { model.showChest = false }
                     }
                     .padding(.top, 6)
@@ -294,8 +294,8 @@ struct ChestView: View {
             HStack(spacing: 10) {
                 Image(systemName: "play.rectangle.fill").font(.system(size: 18))
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("Reklam izle · %50 şans").font(.custom("AvenirNext-Medium", size: 15))
-                    Text("\(ChestTier.names[min(tier + 1, 2)]) sandığa yüksel").font(.custom("AvenirNext-Regular", size: 12)).opacity(0.9)
+                    Text(L("Reklam izle · %%%lld şans", 50)).font(.custom("AvenirNext-Medium", size: 15))
+                    Text(L("%@ sandığa yüksel", ChestTier.names[min(tier + 1, 2)])).font(.custom("AvenirNext-Regular", size: 12)).opacity(0.9)
                 }
             }
             .foregroundStyle(.white)
@@ -312,15 +312,15 @@ struct ChestView: View {
 
     private func describe(_ item: ChestItem) -> (icon: String, title: String, sub: String?) {
         switch item.kind {
-        case .hints(let n): return ("lightbulb.fill", "+\(n) İpucu", "Toplam \(progress.hints)")
-        case .shield(let n): return ("shield.lefthalf.filled", "+\(n) Seri Kalkanı", "Toplam \(progress.shields)")
+        case .hints(let n): return ("lightbulb.fill", L("+%lld İpucu", n), L("Toplam %lld", progress.hints))
+        case .shield(let n): return ("shield.lefthalf.filled", L("+%lld Seri Kalkanı", n), L("Toplam %lld", progress.shields))
         case .fragments(let n):
             let p = progress.fragmentProgress
-            let next = progress.nextFragmentSkin.map { " · Sonraki: \($0.name)" } ?? ""
-            return ("diamond.fill", "+\(n) Kristal parçası", "\(p.have)/\(p.need)\(next)")
-        case .trail(let id): return ("wand.and.stars", "Yeni kesim izi", Trail.all.first { $0.id == id }?.name)
-        case .theme(let id): return ("paintpalette.fill", "Yeni tema", Season.all[id].name)
-        case .skin(let id): return ("sparkles", "Yeni kristal açıldı!", Skin.all[id].name)
+            let next = progress.nextFragmentSkin.map { L(" · Sonraki: %@", $0.name) } ?? ""
+            return ("diamond.fill", L("+%lld Kristal parçası", n), "\(p.have)/\(p.need)\(next)")
+        case .trail(let id): return ("wand.and.stars", L("Yeni kesim izi"), Trail.all.first { $0.id == id }?.name)
+        case .theme(let id): return ("paintpalette.fill", L("Yeni tema"), Season.all[id].name)
+        case .skin(let id): return ("sparkles", L("Yeni kristal açıldı!"), Skin.all[id].name)
         }
     }
 
@@ -350,7 +350,7 @@ struct ChestView: View {
         note = nil
         AdService.shared.showRewarded { ok in
             adBusy = false
-            guard ok else { note = "Reklam tamamlanmadı. Sandık aynı kaldı."; return }
+            guard ok else { note = L("Reklam tamamlanmadı. Sandık aynı kaldı."); return }
             let success = progress.boostChest()
             if success {
                 flash = true
@@ -358,11 +358,11 @@ struct ChestView: View {
                 withAnimation(.spring(response: 0.6, dampingFraction: 0.65)) { tier = progress.todaysChestTier() }
                 SFX.shared.play(.perfect)
                 Haptics.perfect()
-                note = "Yükseldi! \(ChestTier.names[tier]) sandık kazandın."
+                note = L("Yükseldi! %@ sandık kazandın.", ChestTier.names[tier])
             } else {
                 Haptics.warning()
                 SFX.shared.play(.deny)
-                note = "Bu sefer olmadı. Sandığın aynı kaldı."
+                note = L("Bu sefer olmadı. Sandığın aynı kaldı.")
             }
         }
     }

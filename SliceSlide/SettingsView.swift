@@ -18,37 +18,37 @@ struct SettingsView: View {
 
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 22) {
-                    section("SES VE TİTREŞİM") {
-                        toggleRow("music.note", "Müzik", $musicOn) { Music.shared.refresh() }
+                    section(L("SES VE TİTREŞİM")) {
+                        toggleRow("music.note", L("Müzik"), $musicOn) { Music.shared.refresh() }
                         divider
-                        toggleRow("speaker.wave.2.fill", "Efekt sesleri", $sfxOn) {}
+                        toggleRow("speaker.wave.2.fill", L("Efekt sesleri"), $sfxOn) {}
                         divider
-                        toggleRow("iphone.radiowaves.left.and.right", "Titreşim", $hapticsOn) { if hapticsOn { Haptics.cut() } }
+                        toggleRow("iphone.radiowaves.left.and.right", L("Titreşim"), $hapticsOn) { if hapticsOn { Haptics.cut() } }
                     }
 
-                    section("BİLDİRİMLER", footer: "Günde en fazla iki bildirim: öğlen sandık, akşam seri hatırlatması.") {
-                        toggleRow("bell.fill", "Hatırlatmalar", $notifyOn) {
+                    section(L("BİLDİRİMLER"), footer: L("Günde en fazla iki bildirim: öğlen sandık, akşam seri hatırlatması.")) {
+                        toggleRow("bell.fill", L("Hatırlatmalar"), $notifyOn) {
                             if notifyOn { Reminders.requestIfNeeded() } else { Reminders.cancelAll() }
                         }
                     }
 
-                    section("OYUN") {
-                        navRow("questionmark.circle.fill", "Rehberi tekrar göster") {
+                    section(L("OYUN")) {
+                        navRow("questionmark.circle.fill", L("Rehberi tekrar göster")) {
                             model.go(.home)
                             withAnimation(.easeInOut(duration: 0.35)) { model.showIntro = true }
                         }
                         divider
-                        navRow("sparkles", "Kişiselleştir") { model.go(.collection) }
+                        navRow("sparkles", L("Kişiselleştir")) { model.go(.collection) }
                         divider
-                        valueRow("gamecontroller.fill", "Game Center", gc.isAuthenticated ? "Bağlı" : "Bağlı değil")
+                        valueRow("gamecontroller.fill", "Game Center", gc.isAuthenticated ? L("Bağlı") : L("Bağlı değil"))
                     }
 
-                    section("ENVANTER") {
-                        valueRow("lightbulb.fill", "İpucu hakkı", "\(progress.hints)")
+                    section(L("ENVANTER")) {
+                        valueRow("lightbulb.fill", L("İpucu hakkı"), "\(progress.hints)")
                         divider
-                        valueRow("shield.lefthalf.filled", "Seri Kalkanı", "\(progress.shields)")
+                        valueRow("shield.lefthalf.filled", L("Seri Kalkanı"), "\(progress.shields)")
                         divider
-                        valueRow("diamond.fill", "Kristal parçası", "\(progress.fragmentProgress.have)/\(progress.fragmentProgress.need)")
+                        valueRow("diamond.fill", L("Kristal parçası"), "\(progress.fragmentProgress.have)/\(progress.fragmentProgress.need)")
                     }
 
                     #if DEBUG
@@ -63,7 +63,7 @@ struct SettingsView: View {
                     }
                     #endif
 
-                    Text("Slice & Slide · Sürüm \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")")
+                    Text(L("Slice & Slide · Sürüm %@", Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"))
                         .font(.custom("AvenirNext-Regular", size: 12))
                         .foregroundStyle(.white.opacity(0.8))
                         .padding(.top, 4)
@@ -76,7 +76,7 @@ struct SettingsView: View {
             HStack {
                 CircleIconButton(systemName: "chevron.left", size: 44) { model.go(.home) }
                 Spacer()
-                Text("Ayarlar")
+                Text(L("Ayarlar"))
                     .font(.custom("AvenirNext-Medium", size: 26))
                     .kerning(2)
                     .foregroundStyle(.white)

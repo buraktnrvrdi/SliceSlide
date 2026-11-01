@@ -14,10 +14,10 @@ struct IntroView: View {
     enum Art { case swipe, targets, training, ramp }
 
     private let pages: [Page] = [
-        Page(title: "Kes", text: "Ekranın herhangi bir yerinden parmağını düz bir çizgide sürükle. Şekil çizgi boyunca ikiye ayrılır.", art: .swipe),
-        Page(title: "Hedefi tutur", text: "Alttaki halkalar parçaların ne kadar büyük olması gerektiğini söyler. Örneğin %30 ve %70 yazıyorsa şekli o oranda böl; her parça kendisine uyan halkaya kendiliğinden düşer.", art: .targets),
-        Page(title: "İlk 5 bölüm eğitim", text: "Eğitim bölümlerinde sürüklerken parçaların yüzdesini canlı görürsün. 6. bölümden itibaren bu yardım kalkar; yüzdeleri kesimden sonra görürsün ve kesimi gözle ayarlarsın.", art: .training),
-        Page(title: "Zorluk yavaş artar", text: "Önce tek kesim ve basit şekiller. Sonra dengesiz oranlar, kesilemeyen koyu çekirdekler, birden fazla kesim ve en sonda zaman sınırı gelir. Hedefe yeterince yaklaşırsan bölüm geçilir.", art: .ramp),
+        Page(title: L("Kes"), text: L("Ekranın herhangi bir yerinden parmağını düz bir çizgide sürükle. Şekil çizgi boyunca ikiye ayrılır."), art: .swipe),
+        Page(title: L("Hedefi tuttur"), text: L("Alttaki halkalar parçaların ne kadar büyük olması gerektiğini söyler. Örneğin %%%lld ve %%%lld yazıyorsa şekli o oranda böl; her parça kendisine uyan halkaya kendiliğinden düşer.", 30, 70), art: .targets),
+        Page(title: L("İlk 5 bölüm eğitim"), text: L("Eğitim bölümlerinde sürüklerken parçaların yüzdesini canlı görürsün. 6. bölümden itibaren bu yardım kalkar; yüzdeleri kesimden sonra görürsün ve kesimi gözle ayarlarsın."), art: .training),
+        Page(title: L("Zorluk yavaş artar"), text: L("Önce tek kesim ve basit şekiller. Sonra dengesiz oranlar, kesilemeyen koyu çekirdekler, birden fazla kesim ve en sonda zaman sınırı gelir. Hedefe yeterince yaklaşırsan bölüm geçilir."), art: .ramp),
     ]
 
     var body: some View {
@@ -26,7 +26,7 @@ struct IntroView: View {
             VStack(spacing: 0) {
                 HStack {
                     Spacer()
-                    Button("Geç") { finish() }
+                    Button(L("Geç")) { finish() }
                         .font(.custom("AvenirNext-Regular", size: 17))
                         .foregroundStyle(.white.opacity(0.85))
                         .padding(.horizontal, 24).padding(.top, 12)
@@ -65,7 +65,7 @@ struct IntroView: View {
                 }
                 .padding(.bottom, 22)
 
-                PillButton(title: page == pages.count - 1 ? "Başla" : "Devam", width: 220,
+                PillButton(title: page == pages.count - 1 ? L("Başla") : L("Devam"), width: 220,
                            tint: palette.shapeBottomColor) {
                     if page == pages.count - 1 { finish() }
                     else { withAnimation(.easeInOut(duration: 0.3)) { page += 1 } }
@@ -112,16 +112,16 @@ private struct IntroArt: View {
                 VStack(spacing: 22) {
                     split(top: 0.3, sep: 1).scaleEffect(0.62).frame(height: 140)
                     HStack(spacing: 60) {
-                        ring("%30", 38)
-                        ring("%70", 56)
+                        ring(pctText(30), 38)
+                        ring(pctText(70), 56)
                     }
                 }
             case .training:
                 ZStack {
                     RoundedRectangle(cornerRadius: 18).fill(fill).frame(width: 150, height: 170)
                     Rectangle().fill(.white).frame(width: 230, height: 4).shadow(color: .white, radius: 6).offset(y: 12)
-                    Text("%58").font(.custom("AvenirNext-Medium", size: 26)).foregroundStyle(.white).offset(y: -30)
-                    Text("%42").font(.custom("AvenirNext-Medium", size: 26)).foregroundStyle(.white).offset(y: 52)
+                    Text(pctText(58)).font(.custom("AvenirNext-Medium", size: 26)).foregroundStyle(.white).offset(y: -30)
+                    Text(pctText(42)).font(.custom("AvenirNext-Medium", size: 26)).foregroundStyle(.white).offset(y: 52)
                 }
             case .ramp:
                 HStack(alignment: .bottom, spacing: 16) {

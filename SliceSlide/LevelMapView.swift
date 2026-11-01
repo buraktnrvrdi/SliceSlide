@@ -34,7 +34,7 @@ struct LevelMapView: View {
             HStack {
                 CircleIconButton(systemName: "chevron.left", size: 46) { model.go(.home) }
                 Spacer()
-                Text("Bölümler")
+                Text(L("Bölümler"))
                     .font(.custom("AvenirNext-Medium", size: 28))
                     .kerning(2)
                     .foregroundStyle(.white)
@@ -132,7 +132,7 @@ struct LevelMapView: View {
         return VStack(spacing: 6) {
             HStack(spacing: 8) {
                 Image(systemName: locked ? "lock.fill" : season.icon).font(.system(size: 14))
-                Text("SEZON \(season.number)").kerning(3)
+                Text(L("SEZON %lld", season.number)).kerning(3)
             }
             .font(.custom("AvenirNext-Medium", size: 13))
             .foregroundStyle(.white.opacity(0.9))
@@ -145,7 +145,7 @@ struct LevelMapView: View {
                 .foregroundStyle(.white.opacity(0.9))
             HStack(spacing: 8) {
                 GemView(top: season.gemTopColor, bottom: season.gemBottomColor, size: 26, locked: !done)
-                Text(done ? "Ödül alındı: \(season.rewardName)" : "Ödül: \(season.rewardName)")
+                Text(done ? L("Ödül alındı: %@", season.rewardName) : L("Ödül: %@", season.rewardName))
                     .font(.custom("AvenirNext-Regular", size: 13))
                     .foregroundStyle(.white.opacity(0.95))
             }

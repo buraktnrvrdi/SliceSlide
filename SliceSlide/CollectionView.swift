@@ -7,7 +7,7 @@ struct CollectionView: View {
 
     private enum Tab: Int, CaseIterable {
         case set, crystal, trail, theme
-        var title: String { ["Set", "Kristal", "İz", "Tema"][rawValue] }
+        var title: String { L(["Set", "Kristal", "İz", "Tema"][rawValue]) }
         var icon: String { ["square.stack.3d.up.fill", "diamond.fill", "wand.and.stars", "paintpalette.fill"][rawValue] }
     }
 
@@ -41,7 +41,7 @@ struct CollectionView: View {
             HStack {
                 CircleIconButton(systemName: "chevron.left", size: 46) { model.go(.map) }
                 Spacer()
-                Text("Kişiselleştir")
+                Text(L("Kişiselleştir"))
                     .font(.custom("AvenirNext-Medium", size: 28))
                     .kerning(2)
                     .foregroundStyle(.white)
@@ -85,9 +85,9 @@ struct CollectionView: View {
         return VStack(spacing: 8) {
             HStack {
                 Image(systemName: "diamond.fill")
-                Text("Kristal parçaları").font(.custom("AvenirNext-Medium", size: 15))
+                Text(L("Kristal parçaları")).font(.custom("AvenirNext-Medium", size: 15))
                 Spacer()
-                Text(next != nil ? "\(p.have)/\(p.need)" : "Tamam").font(.custom("AvenirNext-Medium", size: 15)).monospacedDigit()
+                Text(next != nil ? "\(p.have)/\(p.need)" : L("Tamam (durum)")).font(.custom("AvenirNext-Medium", size: 15)).monospacedDigit()
             }
             .foregroundStyle(.white)
             ZStack(alignment: .leading) {
@@ -95,7 +95,7 @@ struct CollectionView: View {
                 Capsule().fill(.white).frame(width: max(8, (UIScreen.main.bounds.width - 76) * CGFloat(next != nil ? p.have : p.need) / CGFloat(p.need)), height: 8)
                     .shadow(color: .white.opacity(0.8), radius: 5)
             }
-            Text(next.map { "Sonraki kristal: \($0.name) · Günlük sandıktan parça topla" } ?? "Tüm parça kristalleri açıldı!")
+            Text(next.map { L("Sonraki kristal: %@ · Günlük sandıktan parça topla", $0.name) } ?? L("Tüm parça kristalleri açıldı!"))
                 .font(.custom("AvenirNext-Regular", size: 12))
                 .foregroundStyle(.white.opacity(0.9))
         }
@@ -107,7 +107,7 @@ struct CollectionView: View {
     private var setInfoCard: some View {
         HStack(spacing: 12) {
             Image(systemName: "sparkles").font(.system(size: 22))
-            Text("Tema seti arka planı, kristalleri, kesim izini, sesleri ve müziği birlikte değiştirir. Kristal ve İz sekmelerinden ayrıca seçim yaparsan o seçim öne geçer.")
+            Text(L("Tema seti arka planı, kristalleri, kesim izini, sesleri ve müziği birlikte değiştirir. Kristal ve İz sekmelerinden ayrıca seçim yaparsan o seçim öne geçer."))
                 .font(.custom("AvenirNext-Regular", size: 12))
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -120,7 +120,7 @@ struct CollectionView: View {
     // MARK: Kartlar
 
     @ViewBuilder private var setCards: some View {
-        pick(selected: progress.selectedSet < 0, locked: false, title: "Set Yok", sub: "Sezonun kendi havası",
+        pick(selected: progress.selectedSet < 0, locked: false, title: L("Set Yok"), sub: L("Sezonun kendi havası"),
              art: { Image(systemName: "circle.dashed").font(.system(size: 38)).foregroundStyle(.white).frame(height: 86) }) {
             chooseSet(-1)
         }
@@ -128,7 +128,7 @@ struct CollectionView: View {
             let open = progress.setUnlocked(set.id)
             let pal = Palette.all[set.paletteIDs[0]]
             pick(selected: progress.selectedSet == set.id && open, locked: !open, title: set.name,
-                 sub: open ? set.tagline : "Sezon \(set.unlockSeason + 1)'i bitir",
+                 sub: open ? set.tagline : L("Sezon %lld'i bitir", set.unlockSeason + 1),
                  art: {
                     RoundedRectangle(cornerRadius: 16)
                         .fill(LinearGradient(colors: [pal.topColor, pal.bottomColor], startPoint: .top, endPoint: .bottom))
@@ -155,7 +155,7 @@ struct CollectionView: View {
     }
 
     @ViewBuilder private var crystalCards: some View {
-        pick(selected: progress.selectedSkin < 0, locked: false, title: "Sezon Rengi", sub: "Sezonun kendi renkleri",
+        pick(selected: progress.selectedSkin < 0, locked: false, title: L("Sezon Rengi"), sub: L("Sezonun kendi renkleri"),
              art: { Image(systemName: "paintpalette.fill").font(.system(size: 38)).foregroundStyle(.white).frame(height: 86) }) {
             progress.selectSkin(-1)
         }
@@ -170,8 +170,8 @@ struct CollectionView: View {
 
     private func skinSub(_ skin: Skin, _ open: Bool) -> String {
         switch skin.source {
-        case .season(let s): return open ? "Sezon \(s + 1) ödülü" : "Sezon \(s + 1)'i bitir"
-        case .fragments(let k): return open ? "Parça ödülü" : "\(k * Skin.fragmentsPerSkin) parça topla"
+        case .season(let s): return open ? L("Sezon %lld ödülü", s + 1) : L("Sezon %lld'i bitir", s + 1)
+        case .fragments(let k): return open ? L("Parça ödülü") : L("%lld parça topla", k * Skin.fragmentsPerSkin)
         }
     }
 
@@ -179,7 +179,7 @@ struct CollectionView: View {
         ForEach(Trail.all) { t in
             let open = progress.trailUnlocked(t.id)
             pick(selected: progress.selectedTrail == t.id && open, locked: !open, title: t.name,
-                 sub: t.id == 0 ? "Sezonun kendi efekti" : (open ? "Açıldı" : "Günlük sandıktan çıkar"),
+                 sub: t.id == 0 ? L("Sezonun kendi efekti") : (open ? L("Açıldı") : L("Günlük sandıktan çıkar")),
                  art: { trailArt(t, open) }) {
                 progress.selectTrail(t.id)
             }
@@ -206,7 +206,7 @@ struct CollectionView: View {
     }
 
     @ViewBuilder private var themeCards: some View {
-        pick(selected: progress.selectedTheme < 0, locked: false, title: "Sezon Teması", sub: "Sezona göre değişir",
+        pick(selected: progress.selectedTheme < 0, locked: false, title: L("Sezon Teması"), sub: L("Sezona göre değişir"),
              art: { Image(systemName: "sun.and.horizon.fill").font(.system(size: 38)).foregroundStyle(.white).frame(height: 86) }) {
             progress.selectTheme(-1)
         }
@@ -214,7 +214,7 @@ struct CollectionView: View {
             let open = progress.themeUnlocked(s.index)
             let pal = Palette.all[s.paletteIDs[0]]
             pick(selected: progress.selectedTheme == s.index && open, locked: !open, title: s.name,
-                 sub: open ? "Açıldı" : "Sezonu bitir ya da sandıktan çıkar",
+                 sub: open ? L("Açıldı") : L("Sezonu bitir ya da sandıktan çıkar"),
                  art: {
                     RoundedRectangle(cornerRadius: 16)
                         .fill(LinearGradient(colors: [pal.topColor, pal.bottomColor], startPoint: .top, endPoint: .bottom))

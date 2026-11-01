@@ -92,7 +92,7 @@ final class GameSession: ObservableObject {
             combo = 0
             guard mode == .flow else { return }
             timeLeft -= 5
-            showToast("−5 sn")
+            showToast(L("−5 sn"))
             scheduleNextFlow()
         default:
             break
@@ -150,7 +150,7 @@ final class GameSession: ObservableObject {
     func requestHint() {
         guard phase == .playing, mode != .flow else { return }
         guard PlayerProgress.shared.hints > 0 else {
-            showToast("İpucu hakkın bitti. Günlük meydan okuma ve başarımlarla yenisini kazan.")
+            showToast(L("İpucu hakkın bitti. Günlük meydan okuma ve başarımlarla yenisini kazan."))
             return
         }
         scene.requestHint { [weak self] found in
@@ -159,7 +159,7 @@ final class GameSession: ObservableObject {
                 _ = PlayerProgress.shared.useHint()
                 SFX.shared.play(.tap)
             } else {
-                self.showToast("Bu durumdan ipucu çıkarılamadı. Bölümü yeniden başlatmayı dene.")
+                self.showToast(L("Bu durumdan ipucu çıkarılamadı. Bölümü yeniden başlatmayı dene."))
             }
         }
     }

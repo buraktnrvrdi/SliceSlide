@@ -1,0 +1,2245 @@
+{
+  "sourceLanguage": "tr",
+  "strings": {
+    " · Sonraki: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · Next: %@"
+          }
+        }
+      }
+    },
+    "%@ Sandık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Chest"
+          }
+        }
+      }
+    },
+    "%@ sandığa yüksel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgrade to %@ Chest"
+          }
+        }
+      }
+    },
+    "%lld parça topla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collect %lld shards"
+          }
+        }
+      }
+    },
+    "%lld parça çıktı, %lld hedef var": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You got %lld pieces, but there are %lld targets"
+          }
+        }
+      }
+    },
+    "%lld sn": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld s"
+          }
+        }
+      }
+    },
+    "%lld. gün seri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Day %lld streak"
+          }
+        }
+      }
+    },
+    "+%lld Kristal parçası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crystal Shards +%lld"
+          }
+        }
+      }
+    },
+    "+%lld Seri Kalkanı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Streak Shields +%lld"
+          }
+        }
+      }
+    },
+    "+%lld ipucu hakkı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hints +%lld"
+          }
+        }
+      }
+    },
+    "+%lld İpucu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hints +%lld"
+          }
+        }
+      }
+    },
+    "10 bölüm tamamla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete 10 levels"
+          }
+        }
+      }
+    },
+    "100 kesim yap": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make 100 cuts"
+          }
+        }
+      }
+    },
+    "1000 kesim yap": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make 1000 cuts"
+          }
+        }
+      }
+    },
+    "150 bölüm tamamla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete 150 levels"
+          }
+        }
+      }
+    },
+    "3 gün üst üste günlük meydan okuma": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily challenge 3 days in a row"
+          }
+        }
+      }
+    },
+    "30 gün üst üste": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "30 days in a row"
+          }
+        }
+      }
+    },
+    "5 bölümü yüzde 1'den az sapmayla geç": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear 5 levels with under 1% deviation"
+          }
+        }
+      }
+    },
+    "5 sezonu da bitir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish all 5 seasons"
+          }
+        }
+      }
+    },
+    "50 bölüm tamamla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete 50 levels"
+          }
+        }
+      }
+    },
+    "60 sn · Skor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "60 s · Score"
+          }
+        }
+      }
+    },
+    "7 gün üst üste": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "7 days in a row"
+          }
+        }
+      }
+    },
+    "Akış": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flow"
+          }
+        }
+      }
+    },
+    "Akış Ustası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flow Master"
+          }
+        }
+      }
+    },
+    "Akış modunda 1000 puana ulaş": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reach 1000 points in Flow mode"
+          }
+        }
+      }
+    },
+    "Akış modunda 4000 puana ulaş": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reach 4000 points in Flow mode"
+          }
+        }
+      }
+    },
+    "Akışta": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In the Flow"
+          }
+        }
+      }
+    },
+    "Alttaki halkalar parçaların ne kadar büyük olması gerektiğini söyler. Örneğin %%%lld ve %%%lld yazıyorsa şekli o oranda böl; her parça kendisine uyan halkaya kendiliğinden düşer.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The rings at the bottom show how big each piece should be. If they say %lld%% and %lld%%, split the shape in that ratio; each piece drops into the ring that fits it."
+          }
+        }
+      }
+    },
+    "Altın": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gold"
+          }
+        }
+      }
+    },
+    "Alışkanlık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Habit"
+          }
+        }
+      }
+    },
+    "Amber Taşı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amber Stone"
+          }
+        }
+      }
+    },
+    "Amber Çölü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amber Desert"
+          }
+        }
+      }
+    },
+    "Ana Menü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Main Menu"
+          }
+        }
+      }
+    },
+    "Ay Efendisi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lord of the Month"
+          }
+        }
+      }
+    },
+    "Ayarlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        }
+      }
+    },
+    "Aç": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        }
+      }
+    },
+    "Açıldı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlocked"
+          }
+        }
+      }
+    },
+    "Bağlı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected"
+          }
+        }
+      }
+    },
+    "Bağlı değil": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not connected"
+          }
+        }
+      }
+    },
+    "Başarım": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Awards"
+          }
+        }
+      }
+    },
+    "Başarım kazanıldı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Achievement unlocked"
+          }
+        }
+      }
+    },
+    "Başarımlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Achievements"
+          }
+        }
+      }
+    },
+    "Başla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        }
+      }
+    },
+    "Beş sezonu da bitirdin. Tüm kristaller koleksiyonunda; istediğini seçip bölümleri yeniden oynayabilirsin.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've finished all five seasons. Every crystal is in your collection; pick any and replay the levels."
+          }
+        }
+      }
+    },
+    "Bu durumdan ipucu çıkarılamadı. Bölümü yeniden başlatmayı dene.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't find a hint from here. Try restarting the level."
+          }
+        }
+      }
+    },
+    "Bu sefer olmadı. Sandığın aynı kaldı.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No luck this time. Your chest stays the same."
+          }
+        }
+      }
+    },
+    "Bugünün sürpriz ödülü seni bekliyor. Aç ve ipucu ya da Seri Kalkanı kazan!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's surprise reward is waiting. Open it to win a hint or a Streak Shield!"
+          }
+        }
+      }
+    },
+    "Bugünün ödülünü zaten aldın. Yarın yeni bir bölüm seni bekliyor.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've already claimed today's reward. A new level awaits you tomorrow."
+          }
+        }
+      }
+    },
+    "Buz": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ice"
+          }
+        }
+      }
+    },
+    "Buz Kristali": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ice Crystal"
+          }
+        }
+      }
+    },
+    "Buz Mağarası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ice Cave"
+          }
+        }
+      }
+    },
+    "Bölümler": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Levels"
+          }
+        }
+      }
+    },
+    "BİLDİRİMLER": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NOTIFICATIONS"
+          }
+        }
+      }
+    },
+    "Destansı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Epic"
+          }
+        }
+      }
+    },
+    "Devam": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "Devam Et": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume"
+          }
+        }
+      }
+    },
+    "Donmuş sessizlik": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frozen silence"
+          }
+        }
+      }
+    },
+    "Durduruldu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paused"
+          }
+        }
+      }
+    },
+    "Dönen kristal: şekil ilk kesime kadar yavaşça döner. Zamanlamanı yakala ve çizgini doğru anda çek.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spinning crystal: the shape slowly rotates until the first cut. Catch the timing and draw your line at the right moment."
+          }
+        }
+      }
+    },
+    "ENVANTER": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "INVENTORY"
+          }
+        }
+      }
+    },
+    "Efekt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Effects"
+          }
+        }
+      }
+    },
+    "Efekt sesleri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound effects"
+          }
+        }
+      }
+    },
+    "Efsane": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legend"
+          }
+        }
+      }
+    },
+    "Ekranın herhangi bir yerinden parmağını düz bir çizgide sürükle. Şekil çizgi boyunca ikiye ayrılır.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag your finger in a straight line anywhere on the screen. The shape splits in two along the line."
+          }
+        }
+      }
+    },
+    "En iyi %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best %lld"
+          }
+        }
+      }
+    },
+    "En iyi: %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best: %lld"
+          }
+        }
+      }
+    },
+    "Eğitim bölümlerinde sürüklerken parçaların yüzdesini canlı görürsün. 6. bölümden itibaren bu yardım kalkar; yüzdeleri kesimden sonra görürsün ve kesimi gözle ayarlarsın.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In the training levels you see the pieces' percentages live while dragging. From level 6 this help is gone; you see the percentages after the cut and have to judge it by eye."
+          }
+        }
+      }
+    },
+    "Game Center'a giriş yapılmamış. Cihazın Ayarlar > Game Center bölümünden giriş yapıp tekrar dene.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're not signed in to Game Center. Sign in from Settings > Game Center on your device and try again."
+          }
+        }
+      }
+    },
+    "Gece": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Night"
+          }
+        }
+      }
+    },
+    "Geç": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
+          }
+        }
+      }
+    },
+    "GÜNLÜK ÖDÜL": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DAILY REWARD"
+          }
+        }
+      }
+    },
+    "Gökkuşağı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rainbow"
+          }
+        }
+      }
+    },
+    "Gül Kuvarsı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rose Quartz"
+          }
+        }
+      }
+    },
+    "Gün Batımı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunset"
+          }
+        }
+      }
+    },
+    "Gün batımında sıcak kum": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warm sand at sunset"
+          }
+        }
+      }
+    },
+    "Günde en fazla iki bildirim: öğlen sandık, akşam seri hatırlatması.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At most two notifications a day: the chest at noon, a streak reminder in the evening."
+          }
+        }
+      }
+    },
+    "Günlük": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily"
+          }
+        }
+      }
+    },
+    "Günlük Sandık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily Chest"
+          }
+        }
+      }
+    },
+    "Günlük Sandık 🎁": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily Chest 🎁"
+          }
+        }
+      }
+    },
+    "Günlük meydan okuma hazır. 60 saniyelik Akış modunda rekorunu da kırabilirsin.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your daily challenge is ready. You can also beat your record in the 60-second Flow mode."
+          }
+        }
+      }
+    },
+    "Günlük meydan okuma · Seri %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily challenge · Streak %lld"
+          }
+        }
+      }
+    },
+    "Günlük sandıktan çıkar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drops from the daily chest"
+          }
+        }
+      }
+    },
+    "Günlük sandığı bugün açtın. Yarın yenisi seni bekliyor!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've opened today's chest. A new one awaits tomorrow!"
+          }
+        }
+      }
+    },
+    "Günlük tamamlandı!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daily complete!"
+          }
+        }
+      }
+    },
+    "Günün Kahramanı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hero of the Day"
+          }
+        }
+      }
+    },
+    "Haftalık Seri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly Streak"
+          }
+        }
+      }
+    },
+    "Haftalık seri bonusu!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly streak bonus!"
+          }
+        }
+      }
+    },
+    "Harika": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Great"
+          }
+        }
+      }
+    },
+    "Harika!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Awesome!"
+          }
+        }
+      }
+    },
+    "Hatırlatmalar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminders"
+          }
+        }
+      }
+    },
+    "Hazır": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ready"
+          }
+        }
+      }
+    },
+    "Hedefi tuttur": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hit the target"
+          }
+        }
+      }
+    },
+    "Her şey burada başlar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It all begins here"
+          }
+        }
+      }
+    },
+    "KUSURSUZ": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FLAWLESS"
+          }
+        }
+      }
+    },
+    "Kayan çekirdekler: koyu çekirdekler şeklin içinde sürekli hareket eder. Çizgin çekirdeğe değerse kesim reddedilir.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drifting cores: dark cores keep moving inside the shape. If your line touches a core, the cut is rejected."
+          }
+        }
+      }
+    },
+    "Kes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slice"
+          }
+        }
+      }
+    },
+    "Keskin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sharp"
+          }
+        }
+      }
+    },
+    "Kişisel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Customize"
+          }
+        }
+      }
+    },
+    "Kişiselleştir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Customize"
+          }
+        }
+      }
+    },
+    "Kristal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crystal"
+          }
+        }
+      }
+    },
+    "Kristal Kasabı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crystal Butcher"
+          }
+        }
+      }
+    },
+    "Kristal Vadisi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crystal Valley"
+          }
+        }
+      }
+    },
+    "Kristal koleksiyonuna eklendi. Koleksiyondan seçip oyunda kullanabilirsin.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added to your crystal collection. Pick it from the collection to use it in the game."
+          }
+        }
+      }
+    },
+    "Kristal parçaları": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crystal shards"
+          }
+        }
+      }
+    },
+    "Kristal parçası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crystal shard"
+          }
+        }
+      }
+    },
+    "Kristali kesmek için dokun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap to slice the crystal"
+          }
+        }
+      }
+    },
+    "Kusursuz": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flawless"
+          }
+        }
+      }
+    },
+    "Müzik": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music"
+          }
+        }
+      }
+    },
+    "Nadir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rare"
+          }
+        }
+      }
+    },
+    "Neon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neon"
+          }
+        }
+      }
+    },
+    "Normal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        }
+      }
+    },
+    "Nova": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova"
+          }
+        }
+      }
+    },
+    "Nova Efendisi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova Master"
+          }
+        }
+      }
+    },
+    "Nova Yıldızı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova Star"
+          }
+        }
+      }
+    },
+    "OYUN": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GAME"
+          }
+        }
+      }
+    },
+    "Okyanus": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocean"
+          }
+        }
+      }
+    },
+    "Olmadı. En büyük sapma %%%lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not quite. Biggest deviation: %lld%%"
+          }
+        }
+      }
+    },
+    "Orman": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forest"
+          }
+        }
+      }
+    },
+    "Oyna": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play"
+          }
+        }
+      }
+    },
+    "Oyunu Tamamladın!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You Beat the Game!"
+          }
+        }
+      }
+    },
+    "Pamuk Şeker": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cotton Candy"
+          }
+        }
+      }
+    },
+    "Parmağını sürükleyerek kes": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag your finger to cut"
+          }
+        }
+      }
+    },
+    "Parça ödülü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shard reward"
+          }
+        }
+      }
+    },
+    "Rehberi tekrar göster": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the guide again"
+          }
+        }
+      }
+    },
+    "Reklam izle · %%%lld şans": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watch an ad · %lld%% chance"
+          }
+        }
+      }
+    },
+    "Reklam tamamlanmadı. Sandık aynı kaldı.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ad not completed. Your chest stays the same."
+          }
+        }
+      }
+    },
+    "SES VE TİTREŞİM": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOUND & HAPTICS"
+          }
+        }
+      }
+    },
+    "SEZON %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SEASON %lld"
+          }
+        }
+      }
+    },
+    "Sandık": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chest"
+          }
+        }
+      }
+    },
+    "Seri Kalkanı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Streak Shield"
+          }
+        }
+      }
+    },
+    "Seri Kalkanı seni kurtardı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Streak Shield saved you"
+          }
+        }
+      }
+    },
+    "Set": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set"
+          }
+        }
+      }
+    },
+    "Set Yok": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Set"
+          }
+        }
+      }
+    },
+    "Sezon %lld Tamamlandı!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season %lld Complete!"
+          }
+        }
+      }
+    },
+    "Sezon %lld ödülü": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season %lld reward"
+          }
+        }
+      }
+    },
+    "Sezon %lld'i bitir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish Season %lld"
+          }
+        }
+      }
+    },
+    "Sezon Fatihi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season Conqueror"
+          }
+        }
+      }
+    },
+    "Sezon Rengi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season Color"
+          }
+        }
+      }
+    },
+    "Sezon Teması": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season Theme"
+          }
+        }
+      }
+    },
+    "Sezon sonu ödülü: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season reward: %@"
+          }
+        }
+      }
+    },
+    "Sezon yıldızı: %lld / %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season stars: %lld / %lld"
+          }
+        }
+      }
+    },
+    "Sezon İzi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Season Trail"
+          }
+        }
+      }
+    },
+    "Sezona göre değişir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Changes with the season"
+          }
+        }
+      }
+    },
+    "Sezonu bitir ya da sandıktan çıkar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish the season or find it in a chest"
+          }
+        }
+      }
+    },
+    "Sezonun kendi efekti": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The season's own effect"
+          }
+        }
+      }
+    },
+    "Sezonun kendi havası": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The season's own mood"
+          }
+        }
+      }
+    },
+    "Sezonun kendi renkleri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The season's own colors"
+          }
+        }
+      }
+    },
+    "Slice & Slide · Sürüm %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slice & Slide · Version %@"
+          }
+        }
+      }
+    },
+    "Son Kesim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Final Cut"
+          }
+        }
+      }
+    },
+    "Sonraki kristal: %@ · Günlük sandıktan parça topla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next crystal: %@ · Collect shards from the daily chest"
+          }
+        }
+      }
+    },
+    "Süre Doldu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time's Up"
+          }
+        }
+      }
+    },
+    "Süre baskısı: bölümlerin çoğunda zaman sınırı var. Üstteki çubuk bitmeden kesimlerini tamamla.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time pressure: most levels have a time limit. Finish your cuts before the bar at the top runs out."
+          }
+        }
+      }
+    },
+    "Süre doldu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time's up"
+          }
+        }
+      }
+    },
+    "Sıralama": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ranking"
+          }
+        }
+      }
+    },
+    "Tamam": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Tamam (durum)": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamam"
+          }
+        }
+      }
+    },
+    "Tatlı, yumuşak, pespembe": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sweet, soft and pink"
+          }
+        }
+      }
+    },
+    "Tekrar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restart"
+          }
+        }
+      }
+    },
+    "Tekrar Dene": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try Again"
+          }
+        }
+      }
+    },
+    "Tema": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Theme"
+          }
+        }
+      }
+    },
+    "Tema seti arka planı, kristalleri, kesim izini, sesleri ve müziği birlikte değiştirir. Kristal ve İz sekmelerinden ayrıca seçim yaparsan o seçim öne geçer.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A theme set changes the background, crystals, cut trail, sounds and music together. If you also pick something in the Crystal or Trail tabs, that choice takes priority."
+          }
+        }
+      }
+    },
+    "Temel kesim: şekli hedef yüzdelere göre böl. İlk 5 bölümde canlı önizleme seni yönlendirir.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The basics: split the shape by the target percentages. In the first 5 levels a live preview guides you."
+          }
+        }
+      }
+    },
+    "Titreşim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haptics"
+          }
+        }
+      }
+    },
+    "Toplam %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total %lld"
+          }
+        }
+      }
+    },
+    "Toplam 300 yıldız topla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collect 300 stars in total"
+          }
+        }
+      }
+    },
+    "Toplam 50 yıldız topla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collect 50 stars in total"
+          }
+        }
+      }
+    },
+    "Tüm 300 bölümü tamamla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete all 300 levels"
+          }
+        }
+      }
+    },
+    "Tüm parça kristalleri açıldı!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All shard crystals unlocked!"
+          }
+        }
+      }
+    },
+    "Usta Kesici": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Master Slicer"
+          }
+        }
+      }
+    },
+    "Usta seviyesi: dönen şekil, kayan çekirdekler, süre ve üçlü kesim bir arada. Önceki tüm sezonların toplamı.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Master level: spinning shapes, drifting cores, a time limit and triple cuts all at once. Everything from the previous seasons combined."
+          }
+        }
+      }
+    },
+    "Ustalık sınavı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The mastery test"
+          }
+        }
+      }
+    },
+    "Yeni Rekor!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Record!"
+          }
+        }
+      }
+    },
+    "Yeni kesim izi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New cut trail"
+          }
+        }
+      }
+    },
+    "Yeni kristal açıldı!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New crystal unlocked!"
+          }
+        }
+      }
+    },
+    "Yeni tema": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New theme"
+          }
+        }
+      }
+    },
+    "Yükseldi! %@ sandık kazandın.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upgraded! You won a %@ chest."
+          }
+        }
+      }
+    },
+    "Yıldız Avcısı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Star Hunter"
+          }
+        }
+      }
+    },
+    "Yıldız Koleksiyoncusu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Star Collector"
+          }
+        }
+      }
+    },
+    "Zaman akıyor": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time is flowing"
+          }
+        }
+      }
+    },
+    "Zorluk yavaş artar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Difficulty rises slowly"
+          }
+        }
+      }
+    },
+    "Zümrüt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emerald"
+          }
+        }
+      }
+    },
+    "Zümrüt Ormanı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emerald Forest"
+          }
+        }
+      }
+    },
+    "başarım": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "achievements"
+          }
+        }
+      }
+    },
+    "en iyi seri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "best streak"
+          }
+        }
+      }
+    },
+    "ipucu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hints"
+          }
+        }
+      }
+    },
+    "puan": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pts"
+          }
+        }
+      }
+    },
+    "yıldız": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "stars"
+          }
+        }
+      }
+    },
+    "Çok yakın! En büyük sapma %%%lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "So close! Biggest deviation: %lld%%"
+          }
+        }
+      }
+    },
+    "ÇİFTE SANDIK!": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DOUBLE CHEST!"
+          }
+        }
+      }
+    },
+    "Çırak": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apprentice"
+          }
+        }
+      }
+    },
+    "Ödül alındı: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reward claimed: %@"
+          }
+        }
+      }
+    },
+    "Ödül: %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reward: %@"
+          }
+        }
+      }
+    },
+    "Önce tek kesim ve basit şekiller. Sonra dengesiz oranlar, kesilemeyen koyu çekirdekler, birden fazla kesim ve en sonda zaman sınırı gelir. Hedefe yeterince yaklaşırsan bölüm geçilir.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First single cuts and simple shapes. Then uneven ratios, dark cores that can't be cut, multiple cuts and finally a time limit. Get close enough to the target and you clear the level."
+          }
+        }
+      }
+    },
+    "İlk 5 bölüm eğitim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First 5 levels are training"
+          }
+        }
+      }
+    },
+    "İlk Kesim": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First Cut"
+          }
+        }
+      }
+    },
+    "İlk bölümü tamamla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete your first level"
+          }
+        }
+      }
+    },
+    "İlk günlük meydan okumayı tamamla": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Complete your first daily challenge"
+          }
+        }
+      }
+    },
+    "İlk sezonu bitir": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish the first season"
+          }
+        }
+      }
+    },
+    "İpucu hakkı": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hints"
+          }
+        }
+      }
+    },
+    "İpucu hakkın bitti. Günlük meydan okuma ve başarımlarla yenisini kazan.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're out of hints. Earn more with the daily challenge and achievements."
+          }
+        }
+      }
+    },
+    "İz": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trail"
+          }
+        }
+      }
+    },
+    "−5 sn": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "−5 s"
+          }
+        }
+      }
+    },
+    "🔥 %lld günlük serin bozulmasın! Bugünün meydan okuması seni bekliyor.": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "🔥 Don't break your %lld-day streak! Today's challenge is waiting."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
