@@ -9,3 +9,9 @@ xcuserdata/
 
 # macOS
 .DS_Store
+
+# Tanıtım videoları (büyük dosyalar; GitHub Releases ile paylaşılır)
+docs/*.mp4
+
+# İletişim e-postası doldurulana kadar yayınlanmayacak
+docs/privacy.md

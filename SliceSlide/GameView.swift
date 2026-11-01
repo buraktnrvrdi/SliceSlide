@@ -247,7 +247,7 @@ struct GameView: View {
         case .won(let stars) where session.daily:
             dailyWin(stars: stars)
 
-        case .won(let stars) where session.level % Season.levelsPer == 0:
+        case .won where session.level % Season.levelsPer == 0:
             seasonReward(Season.of(level: session.level))
 
         case .won(let stars):

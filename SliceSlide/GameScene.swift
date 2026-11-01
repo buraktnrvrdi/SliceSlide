@@ -280,7 +280,87 @@ final class GameScene: SKScene {
             s.totalCuts = total
             s.cutsLeft = total
         }
+        #if DEBUG
+        if Self.demo { scheduleDemo(after: 1.1) }
+        #endif
     }
+
+    #if DEBUG
+    // MARK: - Demo (yalnızca test derlemesi, `-demo` argümanı): tanıtım videosu için kendi kendine oynar
+
+    static let demo = ProcessInfo.processInfo.arguments.contains("-demo")
+    private let demoFinger = SKShapeNode(circleOfRadius: 17)
+
+    private func scheduleDemo(after delay: TimeInterval) {
+        let gen = buildGen
+        run(.sequence([.wait(forDuration: delay), .run { [weak self] in
+            guard let self, gen == self.buildGen else { return }
+            self.demoStep()
+        }]), withKey: "demo")
+    }
+
+    private func demoStep() {
+        guard state == .playing, cutsLeft > 0 else { return }
+        hintActive = true   // çözüm aranırken ve çizilirken şekil donsun
+        let snapshot = pieces.map { (poly: $0.poly, cores: $0.cores.map { (c: $0.center, r: $0.radius) }) }
+        let solver = HintSolver(targets: def.targets, tol: def.tolerance * 0.5, total: totalArea)
+        let left = cutsLeft, gen = buildGen
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let line = solver.solve(pieces: snapshot, cutsLeft: left)
+                ?? HintSolver(targets: self?.def.targets ?? [], tol: self?.def.tolerance ?? 0.05, total: self?.totalArea ?? 1)
+                    .solve(pieces: snapshot, cutsLeft: left)
+            DispatchQueue.main.async {
+                guard let self, gen == self.buildGen, self.state == .playing else { return }
+                guard let line else { self.hintActive = false; return }
+                self.demoDrag(line)
+            }
+        }
+    }
+
+    private func demoDrag(_ line: Geo.Line) {
+        // Parçaları kapsayan bölüm + biraz pay
+        let all = pieces.flatMap { $0.poly }
+        let ts = all.map { ($0 - line.p).x * line.d.x + ($0 - line.p).y * line.d.y }
+        let a = line.p + line.d * ((ts.min() ?? -100) - 46)
+        let b = line.p + line.d * ((ts.max() ?? 100) + 46)
+        if demoFinger.parent == nil {
+            demoFinger.fillColor = UIColor(white: 1, alpha: 0.35)
+            demoFinger.strokeColor = UIColor(white: 1, alpha: 0.9)
+            demoFinger.lineWidth = 2
+            demoFinger.glowWidth = 6
+            demoFinger.zPosition = 20
+            overlay.addChild(demoFinger)
+        }
+        demoFinger.removeAllActions()
+        demoFinger.position = a
+        demoFinger.setScale(0.6)
+        demoFinger.alpha = 0
+        lastTrailDot = a
+        let dur = 0.42
+        let drag = SKAction.customAction(withDuration: dur) { [weak self] _, t in
+            guard let self else { return }
+            let k = CGFloat(t) / CGFloat(dur)
+            let e = k < 0.5 ? 2 * k * k : 1 - pow(-2 * k + 2, 2) / 2   // easeInOut
+            let p = a + (b - a) * e
+            self.demoFinger.position = p
+            self.updatePreview(from: a, to: p)
+            if (p - self.lastTrailDot).length >= 14 { self.trailDot(at: p); self.lastTrailDot = p }
+        }
+        demoFinger.run(.sequence([
+            .group([.fadeIn(withDuration: 0.12), .scale(to: 1, duration: 0.12)]),
+            .wait(forDuration: 0.08),
+            drag,
+            .run { [weak self] in
+                guard let self else { return }
+                self.endDrag()
+                self.hintActive = false
+                self.performCut(from: a, to: b)
+                if self.cutsLeft > 0 { self.scheduleDemo(after: 0.75) }
+            },
+            .group([.fadeOut(withDuration: 0.2), .scale(to: 0.6, duration: 0.2)]),
+        ]))
+    }
+    #endif
 
     private func buildAmbient(_ w: CGFloat, _ h: CGFloat) {
         if themeSet?.decor == .candy { buildCandyAmbient(w, h) }
@@ -949,6 +1029,11 @@ final class GameScene: SKScene {
             s.dailyReward = reward
             s.phase = .won(stars: stars)
         }
+        #if DEBUG
+        if Self.demo, session?.mode == .level {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.3) { [weak self] in self?.session?.next() }
+        }
+        #endif
     }
 
     private func fail(message: String, near: Bool) {
@@ -988,6 +1073,9 @@ final class GameScene: SKScene {
         let dt = min(currentTime - lastTime, 0.1)
         updateMotion(dt: CGFloat(dt))
         guard let limit = def.timeLimit else { return }
+        #if DEBUG
+        if Self.demo { return }
+        #endif
         timeLeft -= dt
         let f = max(0, CGFloat(timeLeft / limit))
         timerBar?.xScale = f

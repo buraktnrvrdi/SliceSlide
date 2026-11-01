@@ -12,9 +12,25 @@ final class AppModel: ObservableObject {
         case settings
     }
 
-    @Published var screen: Screen = .home
+    @Published var screen: Screen = AppModel.startScreen
     @Published var showChest = false
     @Published var showIntro = !UserDefaults.standard.bool(forKey: "seenIntro")
+
+    /// Test derlemesinde `-demoStart flow|daily|map|<bölüm>` ile doğrudan o ekrandan başla.
+    private static var startScreen: Screen {
+        #if DEBUG
+        let args = ProcessInfo.processInfo.arguments
+        if let i = args.firstIndex(of: "-demoStart"), i + 1 < args.count {
+            switch args[i + 1] {
+            case "flow": return .flow
+            case "daily": return .daily
+            case "map": return .map
+            default: if let n = Int(args[i + 1]) { return .game(n) }
+            }
+        }
+        #endif
+        return .home
+    }
 
     func go(_ s: Screen) {
         withAnimation(.easeInOut(duration: 0.35)) { screen = s }
