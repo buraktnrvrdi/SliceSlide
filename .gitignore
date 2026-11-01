@@ -12,3 +12,9 @@ xcuserdata/
 
 # Tanıtım videoları (büyük dosyalar; GitHub Releases ile paylaşılır)
 docs/*.mp4
+
+# App Store metin taslakları (yerel)
+AppStore-metinleri.md
+
+# App Store görselleri (yerel; Apple'a elle yüklenir)
+appstore/

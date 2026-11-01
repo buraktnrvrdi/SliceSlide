@@ -16,6 +16,11 @@ final class AppModel: ObservableObject {
     @Published var showChest = false
     @Published var showIntro = !UserDefaults.standard.bool(forKey: "seenIntro")
 
+    #if DEBUG
+    /// Test derlemesinde `-demo` ya da `-noGC`: Game Center girişi ve başarım bildirimi kapalı (ekran görüntüleri için).
+    static let quiet = ProcessInfo.processInfo.arguments.contains("-demo") || ProcessInfo.processInfo.arguments.contains("-noGC")
+    #endif
+
     /// Test derlemesinde `-demoStart flow|daily|map|<bölüm>` ile doğrudan o ekrandan başla.
     private static var startScreen: Screen {
         #if DEBUG
@@ -45,7 +50,12 @@ struct SliceSlideApp: App {
     init() {
         Haptics.prepare()
         _ = SFX.shared
+        #if DEBUG
+        // Demo kayıtlarında Game Center giriş penceresi çıkmasın
+        if !AppModel.quiet { GameCenter.shared.authenticate() }
+        #else
         GameCenter.shared.authenticate()
+        #endif
     }
 
     var body: some Scene {
@@ -85,7 +95,11 @@ struct RootView: View {
                 GameView(level: level).transition(.opacity)
             }
             if model.showChest { ChestView().transition(.opacity).zIndex(15) }
+            #if DEBUG
+            if !AppModel.quiet { AchievementToast().zIndex(20) }
+            #else
             AchievementToast().zIndex(20)
+            #endif
             #if DEBUG
             if ads.presenting { MockAdView().transition(.opacity).zIndex(30) }
             #endif
